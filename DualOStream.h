@@ -26,6 +26,7 @@
 #include <ctime>
 #include <string>
 #include <mutex>
+#include <iomanip>
 
 namespace DualOStream
 {
@@ -104,9 +105,9 @@ namespace DualOStream
 						timeStamp = GetTimeStamp();
 
 						if (timeStampEnabledStream1 == true)
-							str1 << timeStamp;
+							str1 << std::setw(32) << std::left << timeStamp;
 						if (timeStampEnabledStream2 == true)
-							str2 << timeStamp;
+							str2 << std::setw(32) << std::left << timeStamp;
 					}
 
 					if (forceMessage == true)
